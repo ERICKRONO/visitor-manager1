@@ -1,0 +1,52 @@
+<resources>
+    <string name="app_name">Vistors Manager</string>
+    <string name="register_here">Register Here</string>
+    <string name="first_name">First Name</string>
+    <string name="l_name">Last name</string>
+    <string name="pNumber">Phone Number</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="loginbtn">LOGIN</string>
+    <string name="signup">SIGN UP</string>
+    <string name="login">LOGIN</string>
+    <string name="can_t_remember_your_password">Enter your email?</string>
+    <string name="reset_password">RESET PASSWORD</string>
+    <string name="forgot_password">Forgot password?</string>
+    <string name="back">BACK</string>
+    <string name="back1"><![CDATA[<< Back]]></string>
+    <string name="check_out">check out</string>
+    <string name="arrival">Arrival</string>
+    <string name="welcome_to_tuk">Welcome To TUK!</string>
+    <string name="visitors_in">Visitors in</string>
+    <string name="notifications">Notifications</string>
+    <string name="btnarrival">Arrival</string>
+    <string name="name">Name</string>
+    <string name="viam">I am</string>
+    <string name="id">ID No</string>
+    <string name="office">Select destination</string>
+    <string name="vrequest">request</string>
+    <string name="bttt">btn from</string>
+    <string name="confirm">confirm</string>
+    <string name="id_number">ID Number</string>
+    <string name="cancel">cancel</string>
+    <string name="Vid">ID Number</string>
+
+    //arrays for visitors
+
+    <string-array name="persons">
+        <item>A new Visitor</item>
+        <item>A subsequent Visitor</item>
+        <item>A Contractor</item>
+        <item>A Delivery person</item>
+    </string-array>
+
+    // arrays for offices
+
+    <string-array name="offices">
+        <item>Accounts</item>
+        <item>Enquiries</item>
+        <item>Musical</item>
+        <item>computing</item>
+    </string-array>
+
+</resources>

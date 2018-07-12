@@ -1,0 +1,59 @@
+{
+  "project_info": {
+    "project_number": "485863313288",
+    "firebase_url": "https://vistorsmanager.firebaseio.com",
+    "project_id": "vistorsmanager",
+    "storage_bucket": "vistorsmanager.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:485863313288:android:b9adc990f8707144",
+        "android_client_info": {
+          "package_name": "com.ericktech.vistorsmanager"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "485863313288-mu7a5tbndc15159fvjb1ankbqtqjbo5m.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.ericktech.vistorsmanager",
+            "certificate_hash": "e37313bc9bd05847ab6c292cdcfb15059ea3ef0f"
+          }
+        },
+        {
+          "client_id": "485863313288-b38nlnef3vbfj86bggu64ff6e2bfal9s.apps.googleusercontent.com",
+          "client_type": 3
+        },
+        {
+          "client_id": "485863313288-b38nlnef3vbfj86bggu64ff6e2bfal9s.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBBHkVSI4G4Wmn-FUOjw1MeolGjYW79yBw"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 2,
+          "other_platform_oauth_client": [
+            {
+              "client_id": "485863313288-b38nlnef3vbfj86bggu64ff6e2bfal9s.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
