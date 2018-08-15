@@ -30,6 +30,9 @@
     <string name="id_number">ID Number</string>
     <string name="cancel">cancel</string>
     <string name="Vid">ID Number</string>
+    <string name="photo">Selfie</string>
+    <string name="visitor_details">Visitor Details</string>
+
 
     //arrays for visitors
 
