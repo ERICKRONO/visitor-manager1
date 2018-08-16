@@ -23,7 +23,7 @@ public class vistorObject {
         this.name = name;
     }
 
-    public void setIdNumberdNumber(String idNumber) {
+    public void setIdNumberd(String idNumber) {
         this.idNumber = idNumber;
     }
 

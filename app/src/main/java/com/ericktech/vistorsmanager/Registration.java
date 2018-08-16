@@ -86,13 +86,13 @@ public class Registration extends AppCompatActivity {
         enteredPassword = password.getText().toString().trim();
 
         if (TextUtils.isEmpty(enteredfName)){
-            // mProgressDialog.dismiss();
+
 
             email.setError("Field can't be empty!");
             return;
         }
         if (TextUtils.isEmpty(enteredlName)){
-//                    mProgressDialog.dismiss();
+
             progressbar.setVisibility(View.GONE);
             email.setError("Field can't be empty!");
             return;

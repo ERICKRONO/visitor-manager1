@@ -30,7 +30,7 @@ public class Home extends AppCompatActivity {
 
    TextView welcome_to_tuk,visitors_in,notifications,Visitors_in;
    public Button arrival,check_out;
-   RecyclerView vistorsIn;
+//   RecyclerView vistorsIn;
 
 
    DatabaseReference mData, mUser;
@@ -62,9 +62,9 @@ public class Home extends AppCompatActivity {
 
        arrival = findViewById(R.id.harrival);
         Visitors_in = findViewById(R.id.tvvisitorsin);
-        vistorsIn = findViewById(R.id.approvedLIST);
-        vistorsIn.setLayoutManager(new LinearLayoutManager(this));
-
+//        vistorsIn = findViewById(R.id.approvedLIST);
+//        vistorsIn.setLayoutManager(new LinearLayoutManager(this));
+//
         Visitors_in.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -127,7 +127,7 @@ public class Home extends AppCompatActivity {
             }
         };
 
-        vistorsIn.setAdapter(firebaseRecyclerAdapter);
+//        vistorsIn.setAdapter(firebaseRecyclerAdapter);
 
     }
 

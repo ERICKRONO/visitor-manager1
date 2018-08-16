@@ -11,6 +11,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.ProgressBar;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -32,6 +33,7 @@ public class Visitor extends AppCompatActivity {
     EditText vname, vid, vpnumber, viam;
     Button vrequest;
     Spinner vspinner2;
+
 
     FirebaseDatabase database;
     DatabaseReference mDataUser, mDatabase;
@@ -92,6 +94,7 @@ public class Visitor extends AppCompatActivity {
 
         if (!TextUtils.isEmpty(Name) || !TextUtils.isEmpty(Id) || !TextUtils.isEmpty(Phone) || !TextUtils.isEmpty(Destination)) {
 
+
             final DatabaseReference newPost = mDatabase.push();
 
             mDataUser.addValueEventListener(new ValueEventListener() {
@@ -116,7 +119,7 @@ public class Visitor extends AppCompatActivity {
 
                             } else {
 
-                                Toast.makeText(getApplicationContext(), "Something went wrong !", Toast.LENGTH_LONG).show();
+                                Toast.makeText(getApplicationContext(), "Something went wrong !", Toast.LENGTH_SHORT).show();
 
                             }
                         }
@@ -132,6 +135,7 @@ public class Visitor extends AppCompatActivity {
             });
 
         } else  {
+
             Toast.makeText(this, "All fields required !", Toast.LENGTH_SHORT).show();
         }
 
