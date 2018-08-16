@@ -28,7 +28,7 @@ import com.google.firebase.database.ValueEventListener;
 
 public class Home extends AppCompatActivity {
 
-   TextView welcome_to_tuk,visitors_in,notifications;
+   TextView welcome_to_tuk,visitors_in,notifications,Visitors_in;
    public Button arrival,check_out;
    RecyclerView vistorsIn;
 
@@ -61,9 +61,17 @@ public class Home extends AppCompatActivity {
 
 
        arrival = findViewById(R.id.harrival);
+        Visitors_in = findViewById(R.id.tvvisitorsin);
         vistorsIn = findViewById(R.id.approvedLIST);
         vistorsIn.setLayoutManager(new LinearLayoutManager(this));
 
+        Visitors_in.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Home.this, Visitors_in.class);
+                startActivity(intent);
+            }
+        });
 
         arrival.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,7 +117,7 @@ public class Home extends AppCompatActivity {
 
                        mData.child(post_key).removeValue();
 
-                       Toast.makeText(Home.this, "Removed !", Toast.LENGTH_LONG).show();
+                       Toast.makeText(Home.this, "Removed !", Toast.LENGTH_SHORT).show();
 
                    }
                });

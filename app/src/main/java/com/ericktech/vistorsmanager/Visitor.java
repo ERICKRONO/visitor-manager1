@@ -91,22 +91,6 @@ public class Visitor extends AppCompatActivity {
         final String Destination = vspinner2.getSelectedItem().toString();
 
         if (!TextUtils.isEmpty(Name) || !TextUtils.isEmpty(Id) || !TextUtils.isEmpty(Phone) || !TextUtils.isEmpty(Destination)) {
-//            HashMap data = new HashMap();
-//            data.put("name", Name);
-//            data.put("id", Id);
-//            data.put("phone", Phone);
-//            data.put("destination", Destination);
-
-//            mDatabase.updateChildren(data).addOnCompleteListener(new OnCompleteListener() {
-//                @Override
-//                public void onComplete(@NonNull Task task) {
-//                    if (task.isSuccessful()) {
-//                        Toast.makeText(Visitor.this, "Wait for responce", Toast.LENGTH_SHORT).show();
-//                    } else {
-//                        Toast.makeText(Visitor.this, "Unsuccessful", Toast.LENGTH_LONG).show();
-//                    }
-//                }
-//            });
 
             final DatabaseReference newPost = mDatabase.push();
 
@@ -148,7 +132,7 @@ public class Visitor extends AppCompatActivity {
             });
 
         } else  {
-            Toast.makeText(Visitor.this,"All fields required !", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, "All fields required !", Toast.LENGTH_SHORT).show();
         }
 
     }

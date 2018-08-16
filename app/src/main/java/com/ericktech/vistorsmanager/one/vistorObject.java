@@ -12,17 +12,18 @@ public class vistorObject {
 
     }
 
-    public  vistorObject(String name, String idNumber, String destination) {
+    public  vistorObject(String name, String idNumber, String phone, String destination) {
         this.name = name;
         this.idNumber = idNumber;
-        this.phone = destination;
+        this.phone = phone;
+        this.destination = destination;
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setIdNumber(String idNumber) {
+    public void setIdNumberdNumber(String idNumber) {
         this.idNumber = idNumber;
     }
 

@@ -22,6 +22,7 @@
     <string name="btnarrival">Arrival</string>
     <string name="name">Name</string>
     <string name="viam">I am</string>
+    <string name="hbtt">Home</string>
     <string name="id">ID No</string>
     <string name="office">Select destination</string>
     <string name="vrequest">request</string>
@@ -32,6 +33,7 @@
     <string name="Vid">ID Number</string>
     <string name="photo">Selfie</string>
     <string name="visitor_details">Visitor Details</string>
+    <string name="home">Home</string>
 
 
     //arrays for visitors
@@ -48,8 +50,13 @@
     <string-array name="offices">
         <item>Accounts</item>
         <item>Enquiries</item>
-        <item>Musical</item>
+        <item>D14</item>
         <item>computing</item>
+        <item>J12</item>
+        <item>C11</item>
+        <item>D21</item>
+
+
     </string-array>
 
 </resources>
