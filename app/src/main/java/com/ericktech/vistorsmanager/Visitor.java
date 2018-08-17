@@ -26,23 +26,21 @@ import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
 
 import java.util.HashMap;
+import java.util.Random;
+import java.util.UUID;
 
 public class Visitor extends AppCompatActivity {
 
     ImageView vphoto;
     EditText vname, vid, vpnumber, viam;
-    Button vrequest;
+    Button vrequest, save;
     Spinner vspinner2;
+    String Name,Id, Phone,Destination;
 
-
-    FirebaseDatabase database;
-    DatabaseReference mDataUser, mDatabase;
-
-
+    DatabaseReference mDataUser, mDatabase, storage;
     FirebaseAuth mAuth;
     FirebaseUser mUser;
-
-
+    UUID uuid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -52,10 +50,11 @@ public class Visitor extends AppCompatActivity {
         mAuth = FirebaseAuth.getInstance();
         mUser =  mAuth.getCurrentUser();
 
+        uuid = UUID.randomUUID();
 
         mDataUser = FirebaseDatabase.getInstance().getReference().child("").child(mUser.getUid());
-
         mDatabase = FirebaseDatabase.getInstance().getReference().child("Visitors");
+        storage = FirebaseDatabase.getInstance().getReference().child("storage").child(uuid.toString());
         //mDatabase = FirebaseDatabase.getInstance().getReference().child("Visitors");
 
 
@@ -64,39 +63,35 @@ public class Visitor extends AppCompatActivity {
         vpnumber = findViewById(R.id.vpnumber);
         vspinner2 = findViewById(R.id.vspinner2);
         vrequest = findViewById(R.id.vrequest);
+        save = findViewById(R.id.save_btn);
 
         vrequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendrequest();
+                saverequest();
             }
         });
 
 
-       // Button camera = (Button)findViewById(R.id.vphotobtn);
-       // vphoto = (ImageView)findViewById(R.id.vphoto);
 
-      //  camera.setOnClickListener(new View.OnClickListener() {
-        //    @Override
-      //      public void onClick(View v) {
-    //            Intent intent = new Intent (MediaStore.ACTION_IMAGE_CAPTURE);
-  //              startActivityForResult(intent,0);
-//
-       //     }
-     //   });
     }
 
     public void sendrequest() {
-        final String Name = vname.getText().toString().trim();
-        final String Id = vid.getText().toString().trim();
-        final String Phone = vpnumber.getText().toString().trim();
-        final String Destination = vspinner2.getSelectedItem().toString();
+//        final String Name = vname.getText().toString().trim();
+//        final String Id = vid.getText().toString().trim();
+//        final String Phone = vpnumber.getText().toString().trim();
+//        final String Destination = vspinner2.getSelectedItem().toString();
+
+         Name = vname.getText().toString().trim();
+         Id = vid.getText().toString().trim();
+         Phone = vpnumber.getText().toString().trim();
+         Destination = vspinner2.getSelectedItem().toString();
 
         if (!TextUtils.isEmpty(Name) || !TextUtils.isEmpty(Id) || !TextUtils.isEmpty(Phone) || !TextUtils.isEmpty(Destination)) {
 
 
             final DatabaseReference newPost = mDatabase.push();
-
             mDataUser.addValueEventListener(new ValueEventListener() {
                 @Override
                 public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
@@ -139,6 +134,23 @@ public class Visitor extends AppCompatActivity {
             Toast.makeText(this, "All fields required !", Toast.LENGTH_SHORT).show();
         }
 
+    }
+    private void saverequest() {
+        HashMap params = new HashMap();
+        params.put("name",Name);
+        params.put("id",Id);
+        params.put("phone",Phone);
+        params.put("destination",Destination);
+        params.put("uid",mUser.getUid());
+
+        storage.updateChildren(params).addOnCompleteListener(new OnCompleteListener() {
+            @Override
+            public void onComplete(@NonNull Task task) {
+                if (task.isSuccessful()){
+                    Toast.makeText(Visitor.this, "data successfully posted", Toast.LENGTH_SHORT).show();
+                }
+            }
+        });
     }
 
 

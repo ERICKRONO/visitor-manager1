@@ -34,6 +34,7 @@
     <string name="photo">Selfie</string>
     <string name="visitor_details">Visitor Details</string>
     <string name="home">Home</string>
+    <string name="save">Save</string>
 
 
     //arrays for visitors
