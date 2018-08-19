@@ -11,6 +11,7 @@ import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -22,7 +23,7 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Visitors_in extends AppCompatActivity {
 
-        Button Home;
+        Button Home, Appointments;
 
         RecyclerView vistorsIn;
 
@@ -56,7 +57,17 @@ public class Visitors_in extends AppCompatActivity {
 
             vistorsIn = findViewById(R.id.approvedLIST);
             Home = findViewById(R.id.hbtt);
+            Appointments = findViewById(R.id.appoint);
             vistorsIn.setLayoutManager(new LinearLayoutManager(this));
+
+            Appointments.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(Visitors_in.this, Appointments.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+            });
 
 
             Home.setOnClickListener(new View.OnClickListener() {

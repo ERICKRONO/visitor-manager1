@@ -33,7 +33,7 @@ public class Visitor extends AppCompatActivity {
 
     ImageView vphoto;
     EditText vname, vid, vpnumber, viam;
-    Button vrequest, save;
+    Button vrequest, save, Home;
     Spinner vspinner2;
     String Name,Id, Phone,Destination;
 
@@ -63,13 +63,25 @@ public class Visitor extends AppCompatActivity {
         vpnumber = findViewById(R.id.vpnumber);
         vspinner2 = findViewById(R.id.vspinner2);
         vrequest = findViewById(R.id.vrequest);
-        save = findViewById(R.id.save_btn);
+       // save = findViewById(R.id.save_btn);
+        Home = findViewById(R.id.hbtt);
+
+        Home.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Visitor.this, Home.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                startActivity(intent);
+            }
+        });
+
 
         vrequest.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 sendrequest();
                 saverequest();
+
             }
         });
 
@@ -78,17 +90,18 @@ public class Visitor extends AppCompatActivity {
     }
 
     public void sendrequest() {
-//        final String Name = vname.getText().toString().trim();
-//        final String Id = vid.getText().toString().trim();
-//        final String Phone = vpnumber.getText().toString().trim();
-//        final String Destination = vspinner2.getSelectedItem().toString();
 
          Name = vname.getText().toString().trim();
          Id = vid.getText().toString().trim();
          Phone = vpnumber.getText().toString().trim();
          Destination = vspinner2.getSelectedItem().toString();
+       // if (TextUtils.isEmpty(enteredPassword)){
+         //   password.setError("Field can't be empty");
+           // progressbar.setVisibility(View.GONE);
+            //return;
 
-        if (!TextUtils.isEmpty(Name) || !TextUtils.isEmpty(Id) || !TextUtils.isEmpty(Phone) || !TextUtils.isEmpty(Destination)) {
+
+         if (!TextUtils.isEmpty(Name) || !TextUtils.isEmpty(Id) || !TextUtils.isEmpty(Phone) || !TextUtils.isEmpty(Destination)) {
 
 
             final DatabaseReference newPost = mDatabase.push();
@@ -129,7 +142,8 @@ public class Visitor extends AppCompatActivity {
                 }
             });
 
-        } else  {
+        }
+        else  {
 
             Toast.makeText(this, "All fields required !", Toast.LENGTH_SHORT).show();
         }

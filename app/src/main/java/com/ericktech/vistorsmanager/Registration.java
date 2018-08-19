@@ -26,6 +26,7 @@ public class Registration extends AppCompatActivity {
     EditText fName,lname,pNumber,email,password;
     Button  registerNow;
     TextView login;
+    ProgressDialog mProgressDialog;
      FirebaseAuth auth;
      ProgressBar progressbar;
 
@@ -51,7 +52,7 @@ public class Registration extends AppCompatActivity {
         login = findViewById(R.id.logbtn);
 
 
-        //mProgressDialog = new ProgressDialog(this);
+        mProgressDialog = new ProgressDialog(this);
 
         login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -73,9 +74,6 @@ public class Registration extends AppCompatActivity {
 
     private void registerNow() {
 
-        //                mProgressDialog.setTitle("Logging in...");
-//                mProgressDialog.setMessage("Please wait....");
-//                mProgressDialog.show();
         progressbar.setVisibility(View.VISIBLE);
 
         final String enteredfName,enteredlName,enteredpNumber,enteredEmail,enteredPassword;
@@ -87,21 +85,29 @@ public class Registration extends AppCompatActivity {
 
         if (TextUtils.isEmpty(enteredfName)){
 
-
-            email.setError("Field can't be empty!");
+            fName.setError("Field can't be empty!");
+            mProgressDialog.dismiss();
             return;
         }
         if (TextUtils.isEmpty(enteredlName)){
 
+
+            lname.setError("Field can't be empty!");
             progressbar.setVisibility(View.GONE);
-            email.setError("Field can't be empty!");
             return;
         }
         if (TextUtils.isEmpty(enteredpNumber)){
             //   mProgressDialog.dismiss();
+
+            pNumber.setError("Field can't be empty!");
             progressbar.setVisibility(View.GONE);
-            email.setError("Field can't be empty!");
             return;
+        }
+        if (enteredpNumber.length() < 10){
+
+            progressbar.setVisibility(View.GONE);
+            pNumber.setError("Input proper phone number");
+           // mProgressDialog.dismiss();
         }
         if (TextUtils.isEmpty(enteredEmail)){
             //   mProgressDialog.dismiss();
@@ -115,14 +121,15 @@ public class Registration extends AppCompatActivity {
             return;
         }
         if (TextUtils.isEmpty(enteredPassword)){
-//                    password.setError("Field can't be empty");
+            password.setError("Field can't be empty");
             progressbar.setVisibility(View.GONE);
             return;
         }
         if (enteredPassword.length() < 6){
-            //   mProgressDialog.dismiss();
+
             progressbar.setVisibility(View.GONE);
             password.setError("Password characters must be more than 6");
+            mProgressDialog.dismiss();
         }
 
 //                Registering the user

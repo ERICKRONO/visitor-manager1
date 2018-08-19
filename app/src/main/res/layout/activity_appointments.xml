@@ -19,7 +19,7 @@
             android:id="@+id/textView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Visitors curently within"
+            android:text="Up coming Appointments"
             android:textSize="18sp"
             tools:layout_editor_absoluteX="56dp"
             tools:layout_editor_absoluteY="16dp" />
@@ -34,16 +34,7 @@
             android:layout_marginTop="8dp"
             android:layout_weight="1"
             android:text="@string/home" />
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:layout_weight="1"
-            android:text="Appointments"
-            android:id="@+id/appoint"/>
+
     </LinearLayout>
 
     <android.support.v7.widget.RecyclerView

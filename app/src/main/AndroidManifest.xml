@@ -27,7 +27,10 @@
         <activity android:name=".Visitor" />
         <activity android:name=".CheckOut" />
         <activity android:name=".one.ApprovedPasses" />
-        <activity android:name=".Visitors_in"></activity>
+        <activity android:name=".Visitors_in" />
+        <activity android:name=".Today" />
+        <activity android:name=".Appointments" />
+        <activity android:name=".Apoint_one"></activity>
     </application>
 
 </manifest>
