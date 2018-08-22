@@ -49,7 +49,7 @@ public class Appointments extends AppCompatActivity {
             }
         };
 
-        mData = FirebaseDatabase.getInstance().getReference().child("Visitors");
+        mData = FirebaseDatabase.getInstance().getReference().child("Appointment");
 
         mUser = FirebaseDatabase.getInstance().getReference().child("security");
 
@@ -83,6 +83,7 @@ public class Appointments extends AppCompatActivity {
 
                 viewHolder.setname(model.getName());
                 viewHolder.setid(model.getIdNumber());
+                viewHolder.setid(model.getPhone());
                 viewHolder.setdestination(model.getDestination());
 
 
@@ -136,9 +137,15 @@ public class Appointments extends AppCompatActivity {
             textView.setText(name);
         }
 
-        void  setid(String name) {
+        void  setIdNumber(String name) {
             TextView textView =  view.findViewById(R.id.idNationalId);
             textView.setText(name);
+
+        }
+        void  setPhone(String name) {
+            TextView textView =  view.findViewById(R.id.idNationalId);
+            textView.setText(name);
+
         }
 
         void  setdestination(String name) {

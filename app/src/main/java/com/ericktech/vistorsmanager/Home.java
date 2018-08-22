@@ -8,6 +8,7 @@ import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.text.method.LinkMovementMethod;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -16,6 +17,7 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ericktech.vistorsmanager.one.vistorAppointment;
 import com.ericktech.vistorsmanager.one.vistorObject;
 import com.firebase.ui.database.FirebaseRecyclerAdapter;
 import com.google.firebase.auth.FirebaseAuth;
@@ -29,6 +31,7 @@ import com.google.firebase.database.ValueEventListener;
 public class Home extends AppCompatActivity {
 
    TextView welcome_to_tuk,visitors_in,notifications,Visitors_in;
+   TextView vistorButton,l;
    public Button arrival,check_out;
 //   RecyclerView vistorsIn;
 
@@ -61,7 +64,13 @@ public class Home extends AppCompatActivity {
 
 
        arrival = findViewById(R.id.harrival);
+        l = findViewById(R.id.link);
+
         Visitors_in = findViewById(R.id.tvvisitorsin);
+        vistorButton = findViewById(R.id.vistorButton);
+
+
+        l.setMovementMethod(LinkMovementMethod.getInstance());
 //        vistorsIn = findViewById(R.id.approvedLIST);
 //        vistorsIn.setLayoutManager(new LinearLayoutManager(this));
 //
@@ -77,6 +86,14 @@ public class Home extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent= new Intent(Home.this, Visitor.class);
+                startActivity(intent);
+            }
+        });
+
+        vistorButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent= new Intent(Home.this, vistorAppointment.class);
                 startActivity(intent);
             }
         });

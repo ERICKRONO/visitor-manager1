@@ -17,19 +17,22 @@ public class vistorObject {
         this.idNumber = idNumber;
         this.phone = phone;
         this.destination = destination;
+
+//        viewHolder.setname(model.getName());
+//        viewHolder.setid(model.getIdNumber());
+//        viewHolder.setdestination(model.getDestination());
+
     }
 
     public void setName(String name) {
         this.name = name;
     }
 
-    public void setIdNumberd(String idNumber) {
+    public void setIdNumber(String idNumber) {
         this.idNumber = idNumber;
     }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
+    public void setPhone (String phone) { this.phone = phone; }
 
     public void setDestination(String destination) {
         this.destination = destination;

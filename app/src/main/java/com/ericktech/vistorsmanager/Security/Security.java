@@ -1,4 +1,4 @@
-package com.ericktech.vistorsmanager;
+package com.ericktech.vistorsmanager.Security;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
@@ -12,13 +12,21 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.ericktech.vistorsmanager.one.vistorAppointment;
+import com.ericktech.vistorsmanager.Appointments;
+import com.ericktech.vistorsmanager.Home;
+import com.ericktech.vistorsmanager.LoginActivity;
+import com.ericktech.vistorsmanager.PasswordActivity;
+import com.ericktech.vistorsmanager.R;
+import com.ericktech.vistorsmanager.Registration;
+import com.ericktech.vistorsmanager.office.Admin;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 
-public class LoginActivity extends AppCompatActivity {
+public class Security extends AppCompatActivity {
+
+
     EditText email,password;
     Button login,signup;
     TextView forgot_password;
@@ -28,7 +36,7 @@ public class LoginActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_login);
+        setContentView(R.layout.activity_security);
 
         //      firebase Instance
         auth = FirebaseAuth.getInstance();
@@ -45,7 +53,7 @@ public class LoginActivity extends AppCompatActivity {
         forgot_password.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(LoginActivity.this, PasswordActivity.class);
+                Intent intent = new Intent(Security.this, PasswordActivity.class);
                 intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);
                 startActivity(intent);
             }
@@ -98,12 +106,12 @@ public class LoginActivity extends AppCompatActivity {
                             public void onComplete(@NonNull Task<AuthResult> task) {
                                 if (!task.isSuccessful()){
                                     mProgressDialog.dismiss();
-                                    Toast.makeText(LoginActivity.this, "Sign In failed", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(Security.this, "Sign In failed", Toast.LENGTH_SHORT).show();
                                 }else {
                                     mProgressDialog.dismiss();
-                                   // Intent intent = new Intent(getApplicationContext(),Home.class);
+                                    // Intent intent = new Intent(getApplicationContext(),Home.class);
                                     finish();
-                                    startActivity(new Intent(LoginActivity.this, vistorAppointment.class));
+                                    startActivity(new Intent(Security.this, Home.class));
                                 }
                             }
                         });
@@ -113,12 +121,4 @@ public class LoginActivity extends AppCompatActivity {
 
     }
 }
-
-
-
-
-
-
-
-
 

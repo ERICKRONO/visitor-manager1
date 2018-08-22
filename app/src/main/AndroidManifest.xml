@@ -7,20 +7,20 @@
     <application
         android:allowBackup="true"
         android:hardwareAccelerated="false"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@mipmap/visitor"
         android:label="@string/app_name"
         android:largeHeap="true"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".LoginActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".MainActivity" />
+        <activity android:name=".LoginActivity" />
         <activity android:name=".Registration" />
         <activity android:name=".Home" />
         <activity android:name=".PasswordActivity" />
@@ -30,7 +30,13 @@
         <activity android:name=".Visitors_in" />
         <activity android:name=".Today" />
         <activity android:name=".Appointments" />
-        <activity android:name=".Apoint_one"></activity>
+        <activity android:name=".Apoint_one" />
+        <activity android:name=".test" />
+        <activity android:name=".one.vistorAppointment" />
+        <activity android:name=".one.DatePickerWidgetActivity" />
+        <activity android:name=".office.Admin" />
+        <activity android:name=".one.MainActivity" />
+        <activity android:name=".Security.Security"></activity>
     </application>
 
 </manifest>

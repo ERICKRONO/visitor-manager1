@@ -19,7 +19,7 @@
             android:layout_width="150dp"
             android:layout_height="150dp"
             android:layout_centerHorizontal="true"
-            android:src="@mipmap/visitor" />
+            android:src="@mipmap/office" />
 
         <TextView
             android:id="@+id/textView"

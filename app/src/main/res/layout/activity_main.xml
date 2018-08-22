@@ -1,20 +1,50 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_gravity="center"
+    android:orientation="vertical"
+    android:background="@mipmap/background"
     tools:context=".MainActivity">
 
+    <TextView
+        android:id="@+id/asUse"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="147dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Visitor" />
 
 
+    <TextView
+        android:id="@+id/asSecurity"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="196dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Security" />
 
 
+    <TextView
+        android:id="@+id/asAdmin"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginBottom="218dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="Office" />
 
 
+    </RelativeLayout>
 
-
-
-
-
-</RelativeLayout>

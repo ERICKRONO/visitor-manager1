@@ -11,21 +11,15 @@
     <TextView
         android:id="@+id/Vwecome"
         android:layout_width="wrap_content"
+        android:textColor="@color/colorPrimary"
+        android:textStyle="italic"
         android:layout_height="wrap_content"
-        android:text="Welcome to Tuk"
+        android:text="Nationail ID is Amust"
         android:padding="10dp"
         android:layout_gravity="center"
         tools:ignore="HardcodedText" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:weightSum="2">
 
-
-
-
-    </LinearLayout>
 
 
     <LinearLayout
@@ -36,14 +30,14 @@
 
         <Button
             android:id="@+id/harrival"
-            android:layout_width="match_parent"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginBottom="8dp"
             android:layout_marginEnd="8dp"
             android:layout_marginStart="8dp"
             android:layout_marginTop="8dp"
             android:layout_weight="1"
-            android:text="@string/arrival" />
+            android:text="New visitor" />
 
         <TextView
             android:id="@+id/tvvisitorsin"
@@ -60,28 +54,26 @@
             app:layout_constraintTop_toBottomOf="@+id/Vwecome"
             app:layout_constraintVertical_bias="0.403" />
 
+
+
+
         <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="8dp"
-            android:layout_marginEnd="8dp"
-            android:layout_marginStart="8dp"
-            android:layout_marginTop="8dp"
-            android:text="@string/notifications"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvvisitorsin"
-            app:layout_constraintVertical_bias="0.225" />
+            android:id="@+id/vistorButton"
+            android:layout_width="2dp"
+            android:layout_height="2dp"
+            android:text="Vistors"/>
+        <TextView
+            android:layout_width="2dp"
+            android:text="linktosite"
+            android:id="@+id/link"
+            android:layout_height="50dp"
+            android:onClick="Browser1"/>
 
     </LinearLayout>
 
-    <!--<android.support.v7.widget.RecyclerView-->
-        <!--android:id="@+id/approvedLIST"-->
-        <!--android:layout_width="match_parent"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_marginHorizontal="10dp" />-->
+
+
+
 
 
 </LinearLayout>

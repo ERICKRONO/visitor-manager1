@@ -31,6 +31,9 @@
     <string name="id_number">ID Number</string>
     <string name="cancel">cancel</string>
     <string name="Vid">ID Number</string>
+    <string name="linktosite">
+    <a href="http://www.youtube.com">link</a>
+    </string>
     <string name="photo">Selfie</string>
     <string name="visitor_details">Visitor Details</string>
     <string name="home">Home</string>

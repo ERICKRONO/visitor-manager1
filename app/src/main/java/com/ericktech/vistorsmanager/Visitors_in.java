@@ -23,7 +23,8 @@ import com.google.firebase.database.FirebaseDatabase;
 
 public class Visitors_in extends AppCompatActivity {
 
-        Button Home, Appointments;
+        Button Home, Appointments, test;
+        TextView Date;
 
         RecyclerView vistorsIn;
 
@@ -57,6 +58,7 @@ public class Visitors_in extends AppCompatActivity {
 
             vistorsIn = findViewById(R.id.approvedLIST);
             Home = findViewById(R.id.hbtt);
+          //  Date = findViewById(R.id.timm);
             Appointments = findViewById(R.id.appoint);
             vistorsIn.setLayoutManager(new LinearLayoutManager(this));
 
@@ -78,6 +80,7 @@ public class Visitors_in extends AppCompatActivity {
                     startActivity(intent);
                 }
             });
+
 
 
 
@@ -109,17 +112,18 @@ public class Visitors_in extends AppCompatActivity {
 
                     viewHolder.setname(model.getName());
                     viewHolder.setid(model.getIdNumber());
+                    //viewHolder.setid(model.getPhone());
                     viewHolder.setdestination(model.getDestination());
 
 
                     //viewHolder.RemoveButton(post_key);
 
 
-                    viewHolder.remove.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
+                            viewHolder.remove.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
 
-                            mData.child(post_key).removeValue();
+                                    mData.child(post_key).removeValue();
 
                             Toast.makeText(Visitors_in.this, "Removed !", Toast.LENGTH_SHORT).show();
 
@@ -162,9 +166,15 @@ public class Visitors_in extends AppCompatActivity {
                 textView.setText(name);
             }
 
-            void  setid(String name) {
+            void  setIdNumber(String name) {
                 TextView textView =  view.findViewById(R.id.idNationalId);
                 textView.setText(name);
+
+            }
+            void  setPhone(String name) {
+                TextView textView =  view.findViewById(R.id.idNationalId);
+                textView.setText(name);
+
             }
 
             void  setdestination(String name) {
