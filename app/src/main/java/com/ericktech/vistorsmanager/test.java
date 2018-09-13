@@ -10,8 +10,7 @@ import android.widget.DatePicker;
 import android.widget.TextView;
 
 public class test extends AppCompatActivity {
-    //Button selectDate = findViewById(R.id.btnDate);
-    //TextView date = findViewById(R.id.tvSelectedDate);
+
 
 
 
@@ -21,19 +20,6 @@ public class test extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_test);
 
-//        selectDate.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View view) {
-//
-//            }
-//        });
-//        DatePickerDialog datePickerDialog = new DatePickerDialog(test.this,
-//                new DatePickerDialog.OnDateSetListener() {
-//                    @Override
-//                    public void onDateSet(DatePicker datePicker, int year, int month, int day) {
-//
-//                    }
-//                }, 0, 0, 0);
-//        datePickerDialog.show();
+
     }
 }

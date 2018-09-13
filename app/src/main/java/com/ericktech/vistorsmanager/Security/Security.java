@@ -15,6 +15,7 @@ import android.widget.Toast;
 import com.ericktech.vistorsmanager.Appointments;
 import com.ericktech.vistorsmanager.Home;
 import com.ericktech.vistorsmanager.LoginActivity;
+import com.ericktech.vistorsmanager.MainActivity;
 import com.ericktech.vistorsmanager.PasswordActivity;
 import com.ericktech.vistorsmanager.R;
 import com.ericktech.vistorsmanager.Registration;
@@ -95,9 +96,19 @@ public class Security extends AppCompatActivity {
                     password.setError("Field can't be empty");
                     return;
                 }
-                if (enteredPassword.length() < 6){
+                if (enteredPassword.length() <7  ){
                     mProgressDialog.dismiss();
-                    password.setError("Password characters must be more than 6");
+                    password.setError("Access Denied");
+                    startActivity(new Intent(Security.this, MainActivity.class));
+
+                    return;
+
+                }
+                if (enteredPassword.length() < 5 ){
+                    mProgressDialog.dismiss();
+                    password.setError("Access Denied");
+                    return;
+
                 }
 //                authenticate through firebase;
                 auth.signInWithEmailAndPassword(enteredEmail,enteredPassword)

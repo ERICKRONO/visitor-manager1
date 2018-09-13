@@ -10,7 +10,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ProgressBar;
-import android.widget.RelativeLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -21,16 +20,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class Registration extends AppCompatActivity {
-
-    EditText fName,lname,pNumber,email,password;
-    Button  registerNow;
+public class Ddsec extends AppCompatActivity {EditText fName,lname,pNumber,email,password;
+    Button registerNow;
     TextView login;
     ProgressDialog mProgressDialog;
-     FirebaseAuth auth;
-     ProgressBar progressbar;
+    FirebaseAuth auth;
+    ProgressBar progressbar;
 
-      DatabaseReference mData;
+    DatabaseReference mDD;
 
 
     @Override
@@ -39,7 +36,7 @@ public class Registration extends AppCompatActivity {
         setContentView(R.layout.activity_registration);
 
         auth = FirebaseAuth.getInstance();
-        mData = FirebaseDatabase.getInstance().getReference().child("security");
+        mDD = FirebaseDatabase.getInstance().getReference().child("DDsec");
 
 
         fName = findViewById(R.id.fName);
@@ -57,7 +54,7 @@ public class Registration extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(Registration.this, LoginActivity.class);
+                Intent intent = new Intent(Ddsec.this, LoginActivity.class);
                 startActivity(intent);
             }
         });
@@ -107,8 +104,7 @@ public class Registration extends AppCompatActivity {
 
             progressbar.setVisibility(View.GONE);
             pNumber.setError("Input proper phone number");
-            return;
-           // mProgressDialog.dismiss();
+            // mProgressDialog.dismiss();
         }
         if (TextUtils.isEmpty(enteredEmail)){
             //   mProgressDialog.dismiss();
@@ -126,42 +122,42 @@ public class Registration extends AppCompatActivity {
             progressbar.setVisibility(View.GONE);
             return;
         }
-        if (enteredPassword.length() < 6){
+        if (enteredPassword.length() > 5){
 
             progressbar.setVisibility(View.GONE);
             password.setError("Password characters must be more than 6");
+            mProgressDialog.dismiss();
             return;
-           // mProgressDialog.dismiss();
         }
 
 //                Registering the user
         auth.createUserWithEmailAndPassword(enteredEmail,enteredPassword).addOnCompleteListener(new OnCompleteListener<AuthResult>() {
-                    @Override
-                    public void onComplete(@NonNull Task<AuthResult> task) {
-                        if (!task.isSuccessful()){
-                            // mProgressDialog.dismiss();
+            @Override
+            public void onComplete(@NonNull Task<AuthResult> task) {
+                if (!task.isSuccessful()){
+                    // mProgressDialog.dismiss();
 
 
-                            progressbar.setVisibility(View.GONE);
-                            Toast.makeText(Registration.this, "Registration failed!", Toast.LENGTH_SHORT).show();
-                        }else{
+                    progressbar.setVisibility(View.GONE);
+                    Toast.makeText(Ddsec.this, "Registration failed!", Toast.LENGTH_SHORT).show();
+                }else{
 
-                            String userId = auth.getCurrentUser().getUid();
-                            DatabaseReference currentUser = mData.child(userId);
+                    String userId = auth.getCurrentUser().getUid();
+                    DatabaseReference currentUser = mDD.child(userId);
 
-                            currentUser.child("F_name").setValue(enteredfName);
-                            currentUser.child("s_name").setValue(enteredlName);
-                            currentUser.child("phone").setValue(enteredpNumber);
-                            currentUser.child("email").setValue(enteredEmail);
+                    currentUser.child("F_name").setValue(enteredfName);
+                    currentUser.child("s_name").setValue(enteredlName);
+                    currentUser.child("phone").setValue(enteredpNumber);
+                    currentUser.child("email").setValue(enteredEmail);
 
-                            progressbar.setVisibility(View.GONE);
+                    progressbar.setVisibility(View.GONE);
 
-                            Intent intent = new Intent(getApplicationContext(), MainActivity.class);
-                            intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
-                            startActivity(intent);
-                        }
-                    }
-                });
+                    Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                    intent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+                    startActivity(intent);
+                }
+            }
+        });
 
     }
 }

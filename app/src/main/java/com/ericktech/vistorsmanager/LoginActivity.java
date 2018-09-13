@@ -12,6 +12,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.ericktech.vistorsmanager.Security.Security;
 import com.ericktech.vistorsmanager.one.vistorAppointment;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -89,8 +90,19 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 if (enteredPassword.length() < 6){
                     mProgressDialog.dismiss();
-                    password.setError("Password characters must be more than 6");
+                    password.setError("Access denied");
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+
+                    return;
                 }
+                if (enteredPassword.length() > 6){
+                    mProgressDialog.dismiss();
+                    password.setError("Access denied");
+                    startActivity(new Intent(LoginActivity.this, MainActivity.class));
+
+                    return;
+                }
+
 //                authenticate through firebase;
                 auth.signInWithEmailAndPassword(enteredEmail,enteredPassword)
                         .addOnCompleteListener(new OnCompleteListener<AuthResult>() {

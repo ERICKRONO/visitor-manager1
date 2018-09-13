@@ -36,7 +36,8 @@
         <activity android:name=".one.DatePickerWidgetActivity" />
         <activity android:name=".office.Admin" />
         <activity android:name=".one.MainActivity" />
-        <activity android:name=".Security.Security"></activity>
+        <activity android:name=".Security.Security" />
+        <activity android:name=".Ddsec"></activity>
     </application>
 
 </manifest>

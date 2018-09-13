@@ -11,7 +11,7 @@ import com.ericktech.vistorsmanager.office.Admin;
 
 public class MainActivity extends AppCompatActivity {
 
-    TextView user, security, admin;
+    TextView user, security, admin,secdd;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +19,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         user = findViewById(R.id.asUse);
+        secdd = findViewById(R.id.ddsec);
         security = findViewById(R.id.asSecurity);
         admin = findViewById(R.id.asAdmin);
 
@@ -27,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 startActivity(new Intent(MainActivity.this, LoginActivity.class));
             }
+
         });
         security.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -40,5 +42,11 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(new Intent(MainActivity.this, Admin.class));
             }
         });
+//        secdd.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                startActivity(new Intent(MainActivity.this, Ddsec.class));
+//            }
+//        });
     }
 }
